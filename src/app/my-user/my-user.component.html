@@ -1,0 +1,16 @@
+<input [(ngModel)]="id">
+<input readonly [(ngModel)]="id">
+
+
+<BR>
+
+ Mon id est : {{ id }}
+
+<BR>
+ Mon user selectionné est : {{ selectedUseId}}
+ <BR>
+ <select [(ngModel)]= "selectedUseId">
+    <option [value]="use.id" *ngFor="let use of myUser">             {{use.name}}</option>
+  </select>
+
+
