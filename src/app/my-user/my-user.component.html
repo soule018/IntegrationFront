@@ -1,16 +1,27 @@
-<input [(ngModel)]="id">
-<input readonly [(ngModel)]="id">
-
-
-<BR>
-
- Mon id est : {{ id }}
-
-<BR>
- Mon user selectionné est : {{ selectedUseId}}
- <BR>
- <select [(ngModel)]= "selectedUseId">
-    <option [value]="use.id" *ngFor="let use of myUser">             {{use.name}}</option>
-  </select>
-
-
+<app-create-user></app-create-user>
+<table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+            <tr *ngFor="let user of myUser">
+                <th>{{user.id}}</th>
+                <td>{{user.name}}</td>
+                <td><button type="button" class="btn btn-primary btn-sm">
+                    <span class="fa fa-eye"></span>
+                    Detail</button></td>
+                    <td><button type="button" class="btn btn-danger btn-sm">
+                        <span class="fa fa-trash"></span>
+                        Supprimer</button></td>
+              </tr>
+       
+     
+      
+    </tbody>
+  </table>
