@@ -10,7 +10,12 @@ export class UserService {
 private url = 'api/user/'
   constructor(private http: HttpClient) { }
 
-  findAllUser(): Observable <User[]>{
+  findAllUser(): Observable<User[]>{
     return this.http.get<User[]>(`${this.url}`);
   }
+createUser(user: User): Observable<User>{
+  return this.http.post<User>(`${this.url}`,user)
+}
+
+
 }
